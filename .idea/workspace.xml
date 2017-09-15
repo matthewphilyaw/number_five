@@ -14,7 +14,15 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1c826ea-4110-48a5-9a4c-91dc7d467ab6" name="Default" comment="" />
+    <list default="true" id="c1c826ea-4110-48a5-9a4c-91dc7d467ab6" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/include/os.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/FreeRTOSConfig.h" afterPath="$PROJECT_DIR$/include/FreeRTOSConfig.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/include/main.h" afterPath="$PROJECT_DIR$/include/main.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main.c" afterPath="$PROJECT_DIR$/src/main.c" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var.arm.cmake" afterPath="$PROJECT_DIR$/var.arm.cmake" />
+    </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="$PROJECT_DIR$/build/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,88 +34,79 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ssd1306.c" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/display/ssd1306.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-              <folding>
-                <element signature="e#3163#3202#0" expanded="true" />
-                <element signature="e#3240#3279#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="main.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="106" column="13" lean-forward="false" selection-start-line="106" selection-start-column="13" selection-end-line="106" selection-end-column="13" />
+            <state relative-caret-position="-830">
+              <caret line="10" column="1" lean-forward="false" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
               <folding>
-                <element signature="e#0#24#0" expanded="true" />
+                <element signature="e#72#100#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="arm.cmake" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/arm.cmake">
+      <file leaf-file-name="port.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/FreeRTOS/Source/portable/GCC/ARM_CM0/port.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="14" lean-forward="false" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+            <state relative-caret-position="91">
+              <caret line="383" column="23" lean-forward="false" selection-start-line="383" selection-start-column="23" selection-end-line="383" selection-end-column="23" />
+              <folding>
+                <element signature="e#14663#20448#0" expanded="true" />
+                <element signature="e#20824#21097#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FreeRTOSConfig.h" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/include/FreeRTOSConfig.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="112">
+              <caret line="133" column="13" lean-forward="false" selection-start-line="133" selection-start-column="13" selection-end-line="133" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tasks.c" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FreeRTOS/Source/tasks.c">
+      <file leaf-file-name="system_stm32l0xx.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/drivers/CMSIS/Device/ST/STM32L0xx/Source/Templates/system_stm32l0xx.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10110">
-              <caret line="674" column="0" lean-forward="false" selection-start-line="674" selection-start-column="0" selection-end-line="674" selection-end-column="0" />
+            <state relative-caret-position="-2498">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="startup_stm32l053xx.s" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/drivers/CMSIS/Device/ST/STM32L0xx/Source/Templates/gcc/startup_stm32l053xx.s">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2783">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/main.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
               <folding>
-                <element signature="e#28465#29802#0" expanded="true" />
+                <element signature="e#39#54#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cmsis_os.c" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c">
+      <file leaf-file-name="os.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/os.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="772">
-              <caret line="243" column="1" lean-forward="false" selection-start-line="243" selection-start-column="1" selection-end-line="243" selection-end-column="1" />
-              <folding>
-                <element signature="e#9668#10260#0" expanded="true" />
-                <element signature="e#10312#10563#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cmsis_os.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="100" column="0" lean-forward="false" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
-              <folding>
-                <element signature="e#5353#5374#0" expanded="true" />
-                <element signature="e#10271#10283#0" expanded="true" />
-                <element signature="e#16033#16324#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FreeRTOSConfig.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/include/FreeRTOSConfig.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1395">
-              <caret line="93" column="65" lean-forward="false" selection-start-line="93" selection-start-column="65" selection-end-line="93" selection-end-column="65" />
-              <folding>
-                <element signature="e#6486#6617#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="135">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -155,16 +154,20 @@
         <option value="$PROJECT_DIR$/src/gfx.c" />
         <option value="$PROJECT_DIR$/include/gfx.h.h" />
         <option value="$PROJECT_DIR$/include/display/ssd1306.h" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/include/main.h" />
         <option value="$PROJECT_DIR$/src/display/ssd1306.c" />
         <option value="$PROJECT_DIR$/STM32.cmake" />
         <option value="$PROJECT_DIR$/src/display/gfx.c" />
         <option value="$PROJECT_DIR$/include/display/gfx.h" />
-        <option value="$PROJECT_DIR$/include/FreeRTOSConfig.h" />
         <option value="$PROJECT_DIR$/src/tasks/blinky.c" />
-        <option value="$PROJECT_DIR$/src/main.c" />
         <option value="$PROJECT_DIR$/arm.cmake" />
+        <option value="$PROJECT_DIR$/include/common.h" />
+        <option value="$PROJECT_DIR$/include/os.h" />
+        <option value="$PROJECT_DIR$/include/main.h" />
+        <option value="$PROJECT_DIR$/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h" />
+        <option value="$PROJECT_DIR$/FreeRTOS/Source/portable/GCC/ARM_CM0/port.c" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/include/FreeRTOSConfig.h" />
+        <option value="$PROJECT_DIR$/src/main.c" />
       </list>
     </option>
   </component>
@@ -174,6 +177,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="1440" />
     <option name="height" value="900" />
@@ -228,7 +232,9 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -249,7 +255,33 @@
           <expand>
             <path>
               <item name="N5" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="N5" type="462c0819:PsiDirectoryNode" />
+              <item name="number_five" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="N5" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="number_five" type="462c0819:PsiDirectoryNode" />
+              <item name="FreeRTOS" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="N5" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="number_five" type="462c0819:PsiDirectoryNode" />
+              <item name="include" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="N5" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="number_five" type="462c0819:PsiDirectoryNode" />
+              <item name="linker" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="N5" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="number_five" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="N5" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="number_five" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="display" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -259,7 +291,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="CMakeSettings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
@@ -325,26 +357,30 @@
       <workItem from="1505362241748" duration="2219000" />
       <workItem from="1505431434729" duration="119000" />
       <workItem from="1505431583479" duration="1758000" />
+      <workItem from="1505441668299" duration="730000" />
+      <workItem from="1505442466342" duration="4569000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72457000" />
+    <option name="totallyTimeSpent" value="77756000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17525035" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26118502" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889965" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26117647" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282353" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23888889" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -352,7 +388,6 @@
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="100" y="100" width="1240" height="700" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -385,7 +420,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="13" />
+      <option name="time" value="15" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -409,7 +444,7 @@
         <state relative-caret-position="780">
           <caret line="52" column="22" lean-forward="false" selection-start-line="52" selection-start-column="22" selection-end-line="52" selection-end-column="22" />
           <folding>
-            <element signature="e#0#24#0" expanded="true" />
+            <element signature="e#72#100#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -419,82 +454,8 @@
         <state relative-caret-position="14850">
           <caret line="990" column="14" lean-forward="false" selection-start-line="990" selection-start-column="14" selection-end-line="990" selection-end-column="14" />
           <folding>
-            <element signature="e#5353#5374#0" expanded="true" />
-            <element signature="e#10271#10283#0" expanded="true" />
-            <element signature="e#16033#16324#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/display/ssd1306.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="e#3163#3202#0" expanded="true" />
-            <element signature="e#3240#3279#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/display/ssd1306.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1680">
-          <caret line="112" column="0" lean-forward="true" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23175">
-          <caret line="1545" column="9" lean-forward="false" selection-start-line="1545" selection-start-column="9" selection-end-line="1545" selection-end-column="9" />
-          <folding>
-            <element signature="e#9668#10260#0" expanded="true" />
-            <element signature="e#10312#10563#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/arm.cmake">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/var.arm.cmake">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="8" lean-forward="false" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="52" column="22" lean-forward="false" selection-start-line="52" selection-start-column="22" selection-end-line="52" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14850">
-          <caret line="990" column="14" lean-forward="false" selection-start-line="990" selection-start-column="14" selection-end-line="990" selection-end-column="14" />
-          <folding>
-            <element signature="e#5353#5374#0" expanded="true" />
-            <element signature="e#10271#10283#0" expanded="true" />
-            <element signature="e#16033#16324#0" expanded="true" />
+            <element signature="e#5353#5374#0" expanded="false" />
+            <element signature="e#10271#10283#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -504,8 +465,11 @@
         <state relative-caret-position="23175">
           <caret line="1545" column="9" lean-forward="false" selection-start-line="1545" selection-start-column="9" selection-end-line="1545" selection-end-column="9" />
           <folding>
-            <element signature="e#9668#10260#0" expanded="true" />
-            <element signature="e#10312#10563#0" expanded="true" />
+            <element signature="e#5248#5267#0" expanded="false" />
+            <element signature="e#5348#5583#0" expanded="false" />
+            <element signature="e#5969#6227#0" expanded="false" />
+            <element signature="e#9668#10260#0" expanded="false" />
+            <element signature="e#10312#10563#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -536,7 +500,7 @@
         <state relative-caret-position="780">
           <caret line="52" column="22" lean-forward="false" selection-start-line="52" selection-start-column="22" selection-end-line="52" selection-end-column="22" />
           <folding>
-            <element signature="e#0#24#0" expanded="true" />
+            <element signature="e#72#100#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -546,9 +510,8 @@
         <state relative-caret-position="14850">
           <caret line="990" column="14" lean-forward="false" selection-start-line="990" selection-start-column="14" selection-end-line="990" selection-end-column="14" />
           <folding>
-            <element signature="e#5353#5374#0" expanded="true" />
-            <element signature="e#10271#10283#0" expanded="true" />
-            <element signature="e#16033#16324#0" expanded="true" />
+            <element signature="e#5353#5374#0" expanded="false" />
+            <element signature="e#10271#10283#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -558,8 +521,11 @@
         <state relative-caret-position="23175">
           <caret line="1545" column="9" lean-forward="false" selection-start-line="1545" selection-start-column="9" selection-end-line="1545" selection-end-column="9" />
           <folding>
-            <element signature="e#9668#10260#0" expanded="true" />
-            <element signature="e#10312#10563#0" expanded="true" />
+            <element signature="e#5248#5267#0" expanded="false" />
+            <element signature="e#5348#5583#0" expanded="false" />
+            <element signature="e#5969#6227#0" expanded="false" />
+            <element signature="e#9668#10260#0" expanded="false" />
+            <element signature="e#10312#10563#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -583,13 +549,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="237" column="21" lean-forward="false" selection-start-line="237" selection-start-column="21" selection-end-line="237" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FreeRTOS/Source/include/FreeRTOS.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="776" column="10" lean-forward="false" selection-start-line="776" selection-start-column="10" selection-end-line="776" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -630,27 +589,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/gcc-arm-none-eabi-5_2-2015q4/arm-none-eabi/include/stdlib.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="183" column="9" lean-forward="false" selection-start-line="183" selection-start-column="9" selection-end-line="183" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/gcc-arm-none-eabi-5_2-2015q4/arm-none-eabi/include/_ansi.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="64" column="14" lean-forward="false" selection-start-line="64" selection-start-column="14" selection-end-line="64" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="31" column="21" lean-forward="false" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/local/gcc-arm-none-eabi-5_2-2015q4/arm-none-eabi/include/stdlib.h" />
+    <entry file="file:///usr/local/gcc-arm-none-eabi-5_2-2015q4/arm-none-eabi/include/_ansi.h" />
     <entry file="file://$PROJECT_DIR$/include/display/ssd1306.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -680,25 +620,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FreeRTOS/Source/portable/GCC/ARM_CM0/port.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-986">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FreeRTOS/Source/portable/MemMang/heap_1.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-771">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/main.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -716,19 +642,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/FreeRTOSConfig.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1395">
-          <caret line="93" column="65" lean-forward="false" selection-start-line="93" selection-start-column="65" selection-end-line="93" selection-end-column="65" />
-          <folding>
-            <element signature="e#6486#6617#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/display/ssd1306.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="300">
           <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
             <element signature="e#3163#3202#0" expanded="true" />
@@ -737,54 +653,79 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FreeRTOS/Source/tasks.c">
+    <entry file="file://$PROJECT_DIR$/src/tasks/blinky.c" />
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/common.h" />
+    <entry file="file://$PROJECT_DIR$/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10110">
-          <caret line="674" column="0" lean-forward="false" selection-start-line="674" selection-start-column="0" selection-end-line="674" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="773" column="0" lean-forward="false" selection-start-line="773" selection-start-column="0" selection-end-line="773" selection-end-column="0" />
           <folding>
-            <element signature="e#28465#29802#0" expanded="true" />
+            <element signature="e#5353#5374#0" expanded="false" />
+            <element signature="e#10271#10283#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="772">
-          <caret line="243" column="1" lean-forward="false" selection-start-line="243" selection-start-column="1" selection-end-line="243" selection-end-column="1" />
+        <state relative-caret-position="343">
+          <caret line="1414" column="4" lean-forward="false" selection-start-line="1414" selection-start-column="4" selection-end-line="1414" selection-end-column="4" />
           <folding>
-            <element signature="e#9668#10260#0" expanded="true" />
-            <element signature="e#10312#10563#0" expanded="true" />
+            <element signature="e#5248#5267#0" expanded="false" />
+            <element signature="e#5348#5583#0" expanded="false" />
+            <element signature="e#5969#6227#0" expanded="false" />
+            <element signature="e#9668#10260#0" expanded="false" />
+            <element signature="e#10312#10563#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h">
+    <entry file="file://$PROJECT_DIR$/FreeRTOS/Source/include/mpu_prototypes.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="100" column="0" lean-forward="false" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
-          <folding>
-            <element signature="e#5353#5374#0" expanded="true" />
-            <element signature="e#10271#10283#0" expanded="true" />
-            <element signature="e#16033#16324#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tasks/blinky.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="1" lean-forward="false" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+        <state relative-caret-position="-2200">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main.c">
+    <entry file="file://$PROJECT_DIR$/FreeRTOS/Source/include/portable.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="106" column="13" lean-forward="false" selection-start-line="106" selection-start-column="13" selection-end-line="106" selection-end-column="13" />
+        <state relative-caret-position="1953">
+          <caret line="202" column="0" lean-forward="true" selection-start-line="202" selection-start-column="0" selection-end-line="202" selection-end-column="0" />
           <folding>
-            <element signature="e#0#24#0" expanded="true" />
+            <element signature="e#8209#8414#0" expanded="false" />
+            <element signature="e#8442#8443#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FreeRTOS/Source/include/FreeRTOS.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="1043" column="0" lean-forward="false" selection-start-line="1043" selection-start-column="0" selection-end-line="1043" selection-end-column="0" />
+          <folding>
+            <element signature="e#22271#22305#0" expanded="false" />
+            <element signature="e#22845#22878#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FreeRTOS/Source/include/FreeRTOSConfig_template.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -792,6 +733,85 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="14" lean-forward="false" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FreeRTOS/Source/tasks.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="1937" column="5" lean-forward="false" selection-start-line="1937" selection-start-column="5" selection-end-line="1937" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/os.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/drivers/CMSIS/Device/ST/STM32L0xx/Source/Templates/system_stm32l0xx.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2498">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/drivers/CMSIS/Device/ST/STM32L0xx/Source/Templates/gcc/startup_stm32l053xx.s">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2783">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FreeRTOS/Source/portable/GCC/ARM_CM0/port.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="383" column="23" lean-forward="false" selection-start-line="383" selection-start-column="23" selection-end-line="383" selection-end-column="23" />
+          <folding>
+            <element signature="e#14663#20448#0" expanded="true" />
+            <element signature="e#20824#21097#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-830">
+          <caret line="10" column="1" lean-forward="false" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding>
+            <element signature="e#72#100#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/main.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
+          <folding>
+            <element signature="e#39#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/FreeRTOSConfig.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="133" column="13" lean-forward="false" selection-start-line="133" selection-start-column="13" selection-end-line="133" selection-end-column="13" />
           <folding />
         </state>
       </provider>

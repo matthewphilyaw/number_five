@@ -1,12 +1,11 @@
-#include <stm32l053xx.h>
-#include <stdlib.h>
 #include "main.h"
-#include "cmsis_os.h"
-#include "display/ssd1306.h"
-#include "display/gfx.h"
 
 #define I2C_TIMING 0x0004060D
 #define SSD_ADDR 0x78
+
+#include "display/ssd1306.h"
+#include "display/gfx.h"
+
 
 static void LED_Thread(void *argument);
 static void WriteToScreen(void *argument);
@@ -25,7 +24,8 @@ typedef struct {
 
 int main(void) {
   LL_PLL_ConfigSystemClock_HSI(&pll_init_struct, &clk_init_struct);
-  SysTick_Config(32000);
+  // For LL_mDelay - let FreeRtos handle SysTick_Handler
+  LL_Init1msTick(SystemCoreClock);
 
   config_led();
   config_i2c();
@@ -47,20 +47,26 @@ int main(void) {
   xTaskCreate(LED_Thread, "Blinky", configMINIMAL_STACK_SIZE, &t1, 1, NULL);
   xTaskCreate(WriteToScreen, "Write", configMINIMAL_STACK_SIZE, NULL, 1, NULL);
 
-  vTaskStartScheduler();
+  xPortStartScheduler();
 
-  for(;;) {
+  for (;;) {
     // should never get here.
   }
 }
 
+/*
+void SysTick_Handler() {
+
+}
+*/
+
 static void LED_Thread(void *argument) {
   LedBlinky *config =  (LedBlinky *)argument;
 
-  uint32_t prevWakeUpTime = osKernelSysTick();
+  uint32_t prevWakeUpTime = xTaskGetTickCount();
   for(;;) {
     LL_GPIO_TogglePin(GPIOA, config->pin);
-    osDelayUntil(&prevWakeUpTime, config->rate);
+    vTaskDelayUntil(&prevWakeUpTime, config->rate);
   }
 }
 
@@ -71,7 +77,7 @@ static void WriteToScreen(void *argument) {
   for(;;) {
     gfx_clear();
 
-    uint32_t current_tick = osKernelSysTick();
+    uint32_t current_tick = xTaskGetTickCount();
 
     gfx_writeStr("CT: ");
     gfx_write_uint(current_tick);
@@ -87,7 +93,7 @@ static void WriteToScreen(void *argument) {
 
     gfx_display();
 
-    dt = osKernelSysTick() - current_tick;
+    dt = xTaskGetTickCount() - current_tick;
   }
 }
 
@@ -129,16 +135,11 @@ void config_i2c(void) {
   LL_I2C_Enable(I2C1);
 }
 
-void SysTick_Handler(void) {
-  osSystickHandler();
-}
-
 void vApplicationMallocFailedHook( void ) {
   gfx_clear();
   gfx_writeStr("Malloc Failed\n");
   gfx_display();
 }
-
 
 void ssd1306_hard_reset() { }
 void ssd1306_write(uint8_t *buffer, uint16_t length) {

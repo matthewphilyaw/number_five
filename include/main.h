@@ -1,6 +1,9 @@
 #ifndef __MAIN_H__
 #define __MAIN_H__
 
+#include "os.h"
+#include "stdlib.h"
+
 #include "stm32l0xx_ll_bus.h"
 #include "stm32l0xx_ll_rcc.h"
 #include "stm32l0xx_ll_gpio.h"

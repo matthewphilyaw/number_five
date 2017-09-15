@@ -21,7 +21,6 @@ include_directories(
         ${DRIVER_DIR}/${MCU_FAMILY}_HAL_Driver/Inc
         ${DRIVER_DIR}/${MCU_FAMILY}_HAL_Driver/Inc/Legacy
         ${FREE_RTOS_DIR}/Source/include
-        ${FREE_RTOS_DIR}/Source/CMSIS_RTOS
         ${FREE_RTOS_DIR}/Source/portable/GCC/${RTOS_TARGET}
 )
 
@@ -61,7 +60,6 @@ add_library(CMSIS
         ${DRIVER_DIR}/CMSIS/Device/ST/${MCU_FAMILY}/Source/Templates/system_${MCU_FAMILY_LOWER}.c)
 
 add_library(FREE_RTOS
-        ${FREE_RTOS_DIR}/Source/CMSIS_RTOS/cmsis_os.c
         ${FREE_RTOS_DIR}/Source/portable/GCC/${RTOS_TARGET}/port.c
         ${FREE_RTOS_DIR}/Source/portable/MemMang/heap_1.c
         ${FREE_RTOS_DIR}/Source/croutine.c
