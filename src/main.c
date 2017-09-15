@@ -1,13 +1,12 @@
 #include "main.h"
 
-#define I2C_TIMING 0x0004060D
-#define SSD_ADDR 0x78
-
 #include "display/ssd1306.h"
 #include "display/gfx.h"
+#include "task/blinky.h"
 
+#define I2C_TIMING 0x0004060E
+#define SSD_ADDR 0x78
 
-static void LED_Thread(void *argument);
 static void WriteToScreen(void *argument);
 
 void config_led(void);
@@ -15,12 +14,6 @@ void config_i2c(void);
 
 LL_UTILS_PLLInitTypeDef pll_init_struct = {LL_RCC_PLL_MUL_6, LL_RCC_PLL_DIV_3};
 LL_UTILS_ClkInitTypeDef clk_init_struct = {LL_RCC_SYSCLK_DIV_1, LL_RCC_APB1_DIV_1, LL_RCC_APB2_DIV_1};
-
-typedef struct {
-  uint32_t rate;
-  uint32_t pin;
-} LedBlinky;
-
 
 int main(void) {
   LL_PLL_ConfigSystemClock_HSI(&pll_init_struct, &clk_init_struct);
@@ -44,7 +37,7 @@ int main(void) {
 
   LedBlinky t1 = {1000, LL_GPIO_PIN_5};
 
-  xTaskCreate(LED_Thread, "Blinky", configMINIMAL_STACK_SIZE, &t1, 1, NULL);
+  blinky_create_task(&t1);
   xTaskCreate(WriteToScreen, "Write", configMINIMAL_STACK_SIZE, NULL, 1, NULL);
 
   xPortStartScheduler();
@@ -60,15 +53,6 @@ void SysTick_Handler() {
 }
 */
 
-static void LED_Thread(void *argument) {
-  LedBlinky *config =  (LedBlinky *)argument;
-
-  uint32_t prevWakeUpTime = xTaskGetTickCount();
-  for(;;) {
-    LL_GPIO_TogglePin(GPIOA, config->pin);
-    vTaskDelayUntil(&prevWakeUpTime, config->rate);
-  }
-}
 
 static void WriteToScreen(void *argument) {
   (void) argument;
