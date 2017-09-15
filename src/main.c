@@ -3,17 +3,18 @@
 #include "display/ssd1306.h"
 #include "display/gfx.h"
 #include "task/blinky.h"
+#include "task/display.h"
 
 #define I2C_TIMING 0x0004060E
 #define SSD_ADDR 0x78
-
-static void WriteToScreen(void *argument);
 
 void config_led(void);
 void config_i2c(void);
 
 LL_UTILS_PLLInitTypeDef pll_init_struct = {LL_RCC_PLL_MUL_6, LL_RCC_PLL_DIV_3};
 LL_UTILS_ClkInitTypeDef clk_init_struct = {LL_RCC_SYSCLK_DIV_1, LL_RCC_APB1_DIV_1, LL_RCC_APB2_DIV_1};
+
+LedBlinky t1 = {1000, LL_GPIO_PIN_5};
 
 int main(void) {
   LL_PLL_ConfigSystemClock_HSI(&pll_init_struct, &clk_init_struct);
@@ -35,10 +36,8 @@ int main(void) {
 
   gfx_clear();
 
-  LedBlinky t1 = {1000, LL_GPIO_PIN_5};
-
   blinky_create_task(&t1);
-  xTaskCreate(WriteToScreen, "Write", configMINIMAL_STACK_SIZE, NULL, 1, NULL);
+  display_create_task();
 
   xPortStartScheduler();
 
@@ -54,32 +53,6 @@ void SysTick_Handler() {
 */
 
 
-static void WriteToScreen(void *argument) {
-  (void) argument;
-
-  uint32_t dt = 0;
-  for(;;) {
-    gfx_clear();
-
-    uint32_t current_tick = xTaskGetTickCount();
-
-    gfx_writeStr("CT: ");
-    gfx_write_uint(current_tick);
-    gfx_writeChar('\n');
-
-    gfx_writeStr("DT: ");
-    gfx_write_uint(dt);
-    gfx_writeChar('\n');
-
-    gfx_writeStr("HP: ");
-    gfx_write_uint(xPortGetFreeHeapSize());
-    gfx_writeStr("\n");
-
-    gfx_display();
-
-    dt = xTaskGetTickCount() - current_tick;
-  }
-}
 
 void config_led(void) {
   LL_IOP_GRP1_EnableClock(LL_IOP_GRP1_PERIPH_GPIOA);
