@@ -1,0 +1,6 @@
+set(MCU_FAMILY STM32L0xx)
+set(MCU_PART STM32L053xx)
+set(MCU_MCPU cortex-m0plus)
+set(LINKER_SCRIPT ${CMAKE_SOURCE_DIR}/linker/linkerscript.ld)
+set(TOOL_PATH /usr/local/gcc-arm-none-eabi-5_2-2015q4/bin)
+set(RTOS_TARGET ARM_CM0)
