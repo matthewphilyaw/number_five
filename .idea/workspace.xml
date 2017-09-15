@@ -251,11 +251,6 @@
               <item name="N5" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="N5" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="N5" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="N5" type="462c0819:PsiDirectoryNode" />
-              <item name="docs" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -329,12 +324,12 @@
       <workItem from="1505020135380" duration="15553000" />
       <workItem from="1505362241748" duration="2219000" />
       <workItem from="1505431434729" duration="119000" />
-      <workItem from="1505431583479" duration="1632000" />
+      <workItem from="1505431583479" duration="1758000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72331000" />
+    <option name="totallyTimeSpent" value="72457000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
