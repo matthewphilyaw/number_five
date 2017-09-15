@@ -4,9 +4,9 @@ Perhaps a few may get where "number five" comes from. I loved Short Circuit as a
 
 This is a first pass at making a custom robotics platform utilizing an RTOS. I'm using FreeRTOS as it's already provided by ST. I'm sure some who will read this will go why "RTOS" and wouldn't see the need.
 
-However, this project is intended to serve as a playfround that I can try out different takes on how to do handle concurrency in a single core MCU. My background is largely in .NET, I'm used to threads and all the "joys" that come along with, so that aspect of an RTOS doesn't bother me. I know there are pain points around sharring resources and things like that and you have code defesensively for it.
+However, this project is intended to serve as a playground that I can try out different takes on handling concurrency on a single core MCU. My background is largely in .NET and I'm used to threads and all the "joys" that come along with it -- so that aspect of an RTOS does not bother me. 
 
-Thing is it seems like at somepoint you would be trying to reinvent the wheel, these problems don't go away they just get shifted and the point of this project is to see if FreeRTOS makes easier to split up code into tass. Fully expecting lots of gotchas.
+Thing is it seems like at somepoint you would be trying to reinvent the wheel, these problems don't go away they just get shifted and the point of this project is to see if FreeRTOS makes to easier to split up code into tasks. Fully expecting lots of gotchas.
 
 ## A few things:
 1. CMake is used to generate build system
