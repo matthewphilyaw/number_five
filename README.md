@@ -1,6 +1,6 @@
 # Platform for Number Five.
 
-Perhaps a few may get where "number five" comes from. I love Short Circuit as a kid.
+Perhaps a few may get where "number five" comes from. I loved Short Circuit as a kid.
 
 This is a first pass at making a custom robotics platform utilizing an RTOS. I'm using FreeRTOS as it's already provided by ST. I'm sure some who will read this will go why "RTOS" and wouldn't see the need.
 
