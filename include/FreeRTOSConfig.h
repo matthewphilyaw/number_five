@@ -168,11 +168,11 @@ header file. */
               to prevent overwriting SysTick_Handler defined within STM32Cube HAL */
 #define xPortSysTickHandler SysTick_Handler
 
-extern void main_config_timer(void);
-extern uint32_t main_get_count(void);
+extern void runtime_stats_config_timer(void);
+extern uint32_t runtime_stats_get_count(void);
 
-#define portCONFIGURE_TIMER_FOR_RUN_TIME_STATS() main_config_timer();
-#define portGET_RUN_TIME_COUNTER_VALUE() main_get_count();
+#define portCONFIGURE_TIMER_FOR_RUN_TIME_STATS() runtime_stats_config_timer();
+#define portGET_RUN_TIME_COUNTER_VALUE() runtime_stats_get_count();
 
 #endif /* FREERTOS_CONFIG_H */
 

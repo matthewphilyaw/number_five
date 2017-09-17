@@ -8,7 +8,7 @@
 #define I2C_TIMING 0x0004060E
 #define SSD_ADDR 0x78
 
-volatile uint32_t idle_time_delta = 0;
+
 
 void config_led(void);
 void config_i2c(void);
@@ -27,21 +27,20 @@ int main(void) {
   config_led();
   config_i2c();
 
-  LL_mDelay(1000);
+  // settle for a moment before writing to screen
+  LL_mDelay(20);
 
   gfx_init();
 
-  //                  123456789ABCDEF12345
-  gfx_write_str("\n\n\n      Starting..    \n");
+  //                   123456789ABCDEF12345
+  gfx_write_str("\n\n\n     Starting..\n");
   gfx_display();
-
-  LL_mDelay(1000);
-
-  gfx_clear();
 
   blinky_create_task(&t1);
   blinky_create_task(&t2);
   runtime_stats_create_task();
+
+  gfx_clear();
 
   vTaskStartScheduler();
 
@@ -88,33 +87,11 @@ void config_i2c(void) {
   LL_I2C_Enable(I2C1);
 }
 
-void main_config_timer(void) {
-  LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_TIM21);
-
-  LL_TIM_SetPrescaler(TIM21, __LL_TIM_CALC_PSC(SystemCoreClock, 100000));
-  LL_TIM_SetAutoReload(TIM21, UINT16_MAX -1);
-
-  LL_TIM_EnableCounter(TIM21);
-  LL_TIM_GenerateEvent_UPDATE(TIM21);
-}
-
-uint32_t main_get_count(void) {
-  return LL_TIM_GetCounter(TIM21);
-}
-
-
 void vApplicationMallocFailedHook( void ) {
   gfx_clear();
   gfx_write_str("Malloc Failed\n");
   gfx_display();
 }
-
-void vApplicationStackOverflowHook( TaskHandle_t xTask, signed char *pcTaskName ) {
-  gfx_clear();
-  gfx_write_str("StackOverFlow\n");
-  gfx_display();
-}
-
 
 void ssd1306_hard_reset() { }
 void ssd1306_write(uint8_t *buffer, uint16_t length) {
