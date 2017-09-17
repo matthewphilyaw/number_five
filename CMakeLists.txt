@@ -30,7 +30,7 @@ set(USER_SOURCE
         src/display/ssd1306.c
         src/display/gfx.c
         src/task/blinky.c
-        src/task/display.c)
+        src/task/runtime_stats.c)
 
 # Libraries
 set(HAL_DIR_PREFIX ${DRIVER_DIR}/${MCU_FAMILY}_HAL_Driver/Src/${MCU_FAMILY_LOWER}_ll_)

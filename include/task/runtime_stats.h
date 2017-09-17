@@ -5,6 +5,6 @@
 #ifndef N5_DISPLAY_H
 #define N5_DISPLAY_H
 
-void display_create_task(void);
+void runtime_stats_create_task(void);
 
 #endif //N5_DISPLAY_H

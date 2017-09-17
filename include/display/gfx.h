@@ -15,11 +15,11 @@
 #define WRAP        1
 #define SCROLL      1
 
-void gfx_fillRect(int16_t x, int16_t y, int16_t w, int16_t h, uint16_t color);
-void gfx_drawChar(int16_t x, int16_t y, unsigned char c, uint16_t color, uint16_t bg, uint8_t size);
-void gfx_writeChar(uint8_t c);
+void gfx_fill_rect(int16_t x, int16_t y, int16_t w, int16_t h, uint16_t color);
+void gfx_draw_char(int16_t x, int16_t y, unsigned char c, uint16_t color, uint16_t bg, uint8_t size);
+void gfx_write_char(uint8_t c);
 
-void gfx_writeStr(char *str);
+void gfx_write_str(const char *str);
 void gfx_write_uint(uint32_t n);
 void gfx_write_int(int32_t n);
 

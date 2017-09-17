@@ -6,13 +6,13 @@ static uint16_t cursor_y;
 
 static bool clear_first_on_next_char_write = false;
 
-void gfx_fillRect(int16_t x, int16_t y, int16_t w, int16_t h, uint16_t color) {
+void gfx_fill_rect(int16_t x, int16_t y, int16_t w, int16_t h, uint16_t color) {
   for (int16_t i=x; i<x+w; i++) {
     ssd1306_drawFastVLine(i, y, h, color);
   }
 }
 
-void gfx_drawChar(int16_t x, int16_t y, unsigned char c, uint16_t color, uint16_t bg, uint8_t size) {
+void gfx_draw_char(int16_t x, int16_t y, unsigned char c, uint16_t color, uint16_t bg, uint8_t size) {
   if((x >= SSD1306_LCDWIDTH)            || // Clip right
      (y >= SSD1306_LCDHEIGHT)           || // Clip bottom
      ((x + 6 * size - 1) < 0) || // Clip left
@@ -29,22 +29,22 @@ void gfx_drawChar(int16_t x, int16_t y, unsigned char c, uint16_t color, uint16_
         if(size == 1)
           ssd1306_drawPixel(x+i, y+j, color);
         else
-          gfx_fillRect(x+i*size, y+j*size, size, size, color);
+          gfx_fill_rect(x + i * size, y + j * size, size, size, color);
       } else if(bg != color) {
         if(size == 1)
           ssd1306_drawPixel(x+i, y+j, bg);
         else
-          gfx_fillRect(x+i*size, y+j*size, size, size, bg);
+          gfx_fill_rect(x + i * size, y + j * size, size, size, bg);
       }
     }
   }
   if(bg != color) { // If opaque, draw vertical line for last column
     if(size == 1) ssd1306_drawFastVLine(x+5, y, 8, bg);
-    else          gfx_fillRect(x+5*size, y, size, 8*size, bg);
+    else gfx_fill_rect(x + 5 * size, y, size, 8 * size, bg);
   }
 }
 
-void gfx_writeChar(uint8_t c) {
+void gfx_write_char(uint8_t c) {
   if (clear_first_on_next_char_write) {
     ssd1306_clearDisplay();
     clear_first_on_next_char_write = false;
@@ -69,14 +69,14 @@ void gfx_writeChar(uint8_t c) {
       }
       cursor_y = next_line;          // advance y one line
     }
-    gfx_drawChar(cursor_x, cursor_y, c, TEXTCOLOR, TEXTBGCOLOR, TEXTSIZE);
+    gfx_draw_char(cursor_x, cursor_y, c, TEXTCOLOR, TEXTBGCOLOR, TEXTSIZE);
     cursor_x += TEXTSIZE * 6;          // Advance x one char
   }
 }
 
-void gfx_writeStr(char *str) {
+void gfx_write_str(const char *str) {
   for (;*str != '\0'; str++) {
-    gfx_writeChar(*str);
+    gfx_write_char(*str);
   }
 }
 
@@ -85,14 +85,14 @@ void gfx_write_uint(uint32_t n) {
   char itoa_buffer[(sizeof(uint32_t) * 8) + 1];
   itoa(n, itoa_buffer, 10);
 
-  gfx_writeStr(itoa_buffer);
+  gfx_write_str(itoa_buffer);
 }
 
 void gfx_write_int(int32_t n) {
   char itoa_buffer[(sizeof(int32_t) * 8) + 1];
   itoa(n, itoa_buffer, 10);
 
-  gfx_writeStr(itoa_buffer);
+  gfx_write_str(itoa_buffer);
 }
 
 void gfx_init() {

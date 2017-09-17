@@ -104,7 +104,7 @@
 #define configUSE_MALLOC_FAILED_HOOK            1
 #define configUSE_APPLICATION_TASK_TAG          0
 #define configUSE_COUNTING_SEMAPHORES           1
-#define configGENERATE_RUN_TIME_STATS           0
+#define configGENERATE_RUN_TIME_STATS           1
 
 /* Co-routine definitions. */
 #define configUSE_CO_ROUTINES                   0
@@ -125,6 +125,7 @@ to exclude the API function. */
 #define INCLUDE_vTaskSuspend                    1
 #define INCLUDE_vTaskDelayUntil                 1
 #define INCLUDE_vTaskDelay                      1
+#define INCLUDE_xTaskGetIdleTaskHandle          1
 #define INCLUDE_xQueueGetMutexHolder            1
 #define INCLUDE_xTaskGetSchedulerState          1
 #define INCLUDE_eTaskGetState                   1
@@ -166,6 +167,12 @@ header file. */
 /* IMPORTANT: This define MUST be commented when used with STM32Cube firmware,
               to prevent overwriting SysTick_Handler defined within STM32Cube HAL */
 #define xPortSysTickHandler SysTick_Handler
+
+extern void main_config_timer(void);
+extern uint32_t main_get_count(void);
+
+#define portCONFIGURE_TIMER_FOR_RUN_TIME_STATS() main_config_timer();
+#define portGET_RUN_TIME_COUNTER_VALUE() main_get_count();
 
 #endif /* FREERTOS_CONFIG_H */
 

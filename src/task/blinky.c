@@ -9,7 +9,7 @@
 static void LED_Thread(void *argument);
 
 void blinky_create_task(LedBlinky *config) {
-  xTaskCreate(LED_Thread, "Blinky", configMINIMAL_STACK_SIZE, config, 1, NULL);
+  xTaskCreate(LED_Thread, "BLNK", configMINIMAL_STACK_SIZE - 1, config, 2, NULL);
 }
 
 static void LED_Thread(void *argument) {
