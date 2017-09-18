@@ -1,15 +1,15 @@
-#include "main.h"
-
+#include "ll.h"
+#include "os.h"
 #include "display/ssd1306.h"
 #include "display/gfx.h"
 #include "task/blinky.h"
 #include "task/runtime_stats.h"
 #include "bsp/board.h"
 
+#define N5_USER_RUNTIME_STATS 0
 #define SSD_ADDR 0x78
 
 LedBlinky t1 = {500, LL_GPIO_PIN_5};
-LedBlinky t2 = {10, LL_GPIO_PIN_5};
 
 int main(void) {
   board_init();
@@ -24,8 +24,13 @@ int main(void) {
   gfx_display();
 
   blinky_create_task(&t1);
-  blinky_create_task(&t2);
-  //runtime_stats_create_task();
+
+#if (N5_USER_RUNTIME_STATS == 1)
+  #if (configUSE_TRACE_FACILITY != 1 || configGENERATE_RUN_TIME_STATS != 1)
+    #error "configUSE_TRACE_FACILITY and configGENERATE_RUN_TIME_STATS must be set to 1"
+  #endif
+  runtime_stats_create_task();
+#endif
 
   gfx_clear();
 

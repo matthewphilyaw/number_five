@@ -11,8 +11,7 @@
      *    platform software that has become a de facto standard.             *
      *                                                                       *
      *    Help yourself get started quickly and support the FreeRTOS         *
-     *    project by purchasing a FreeRTOS tutorial book, reference          *
-     *    manual, or both from: http://www.FreeRTOS.org/Documentation        *
+     *    project by purchasing a FreeRTOS tutorial book, reference          * *    manual, or both from: http://www.FreeRTOS.org/Documentation        *
      *                                                                       *
      *    Thank you!                                                         *
      *                                                                       *
@@ -94,7 +93,7 @@
 #define configMINIMAL_STACK_SIZE                ( ( uint16_t ) 100 )
 #define configTOTAL_HEAP_SIZE                   ( ( size_t ) ( 4 * 1024 ) )
 #define configMAX_TASK_NAME_LEN                 ( 16 )
-#define configUSE_TRACE_FACILITY                1
+#define configUSE_TRACE_FACILITY                0
 #define configUSE_16_BIT_TICKS                  0
 #define configIDLE_SHOULD_YIELD                 1
 #define configUSE_MUTEXES                       1
@@ -104,7 +103,7 @@
 #define configUSE_MALLOC_FAILED_HOOK            1
 #define configUSE_APPLICATION_TASK_TAG          0
 #define configUSE_COUNTING_SEMAPHORES           1
-#define configGENERATE_RUN_TIME_STATS           1
+#define configGENERATE_RUN_TIME_STATS           0
 
 /* Co-routine definitions. */
 #define configUSE_CO_ROUTINES                   0
