@@ -27,6 +27,7 @@ include_directories(
 # User source
 set(USER_SOURCE
         src/main.c
+        src/bsp/board.c
         src/display/ssd1306.c
         src/display/gfx.c
         src/task/blinky.c

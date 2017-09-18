@@ -8,7 +8,6 @@
 #include "display/gfx.h"
 #include "task/runtime_stats.h"
 
-
 static void WriteToScreen(void *argument);
 
 char buffer[100];
@@ -60,20 +59,20 @@ static void WriteToScreen(void *argument) {
   }
 }
 
-void TIM21_IRQHandler() {
+void RUNTIME_STATS_TIMER_IRQHANDLER() {
   static uint32_t isr_count = 0;
 
   isr_count++;
 
-  if (LL_TIM_IsActiveFlag_UPDATE(TIM21) == 1) {
-    LL_TIM_ClearFlag_UPDATE(TIM21);
+  if (LL_TIM_IsActiveFlag_UPDATE(RUNTIME_STATS_TIMER_INST) == 1) {
+    LL_TIM_ClearFlag_UPDATE(RUNTIME_STATS_TIMER_INST);
   }
 
   if (isr_count < 2) {
     return;
   }
 
-  LL_TIM_DisableIT_UPDATE(TIM21);
+  LL_TIM_DisableIT_UPDATE(RUNTIME_STATS_TIMER_INST);
 
   BaseType_t higherPriorityTaskWoken = pdFALSE;
   vTaskNotifyGiveFromISR(run_time_stat_handle, &higherPriorityTaskWoken);
@@ -81,20 +80,20 @@ void TIM21_IRQHandler() {
 }
 
 void runtime_stats_config_timer(void) {
-  LL_APB2_GRP1_EnableClock(LL_APB2_GRP1_PERIPH_TIM21);
+  RUNTIME_STATS_TIMER_ENABLE_CLOCK();
 
-  LL_TIM_SetPrescaler(TIM21, __LL_TIM_CALC_PSC(SystemCoreClock, 100000));
-  LL_TIM_SetAutoReload(TIM21, UINT16_MAX -1);
+  LL_TIM_SetPrescaler(RUNTIME_STATS_TIMER_INST, __LL_TIM_CALC_PSC(SystemCoreClock, RUNTIME_STATS_TIMER_FREQ));
+  LL_TIM_SetAutoReload(RUNTIME_STATS_TIMER_INST, UINT16_MAX -1);
 
-  LL_TIM_EnableIT_UPDATE(TIM21);
+  LL_TIM_EnableIT_UPDATE(RUNTIME_STATS_TIMER_INST);
 
-  NVIC_SetPriority(TIM21_IRQn, 1);
-  NVIC_EnableIRQ(TIM21_IRQn);
+  NVIC_SetPriority(RUNTIME_STATS_TIMER_IRQN, 1);
+  NVIC_EnableIRQ(RUNTIME_STATS_TIMER_IRQN);
 
-  LL_TIM_EnableCounter(TIM21);
-  LL_TIM_GenerateEvent_UPDATE(TIM21);
+  LL_TIM_EnableCounter(RUNTIME_STATS_TIMER_INST);
+  LL_TIM_GenerateEvent_UPDATE(RUNTIME_STATS_TIMER_INST);
 }
 
 uint32_t runtime_stats_get_count(void) {
-  return LL_TIM_GetCounter(TIM21);
+  return LL_TIM_GetCounter(RUNTIME_STATS_TIMER_INST);
 }
