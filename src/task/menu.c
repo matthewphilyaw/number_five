@@ -7,10 +7,13 @@
 #include "ll.h"
 #include "display/gfx.h"
 
+static StaticTask_t buffer;
+static StackType_t stack[configMINIMAL_STACK_SIZE];
+
 static void menu_thread(void *argument);
 
 void menu_create_task(void) {
-  xTaskCreate(menu_thread, "MENU", configMINIMAL_STACK_SIZE - 1, NULL, 2, NULL);
+  xTaskCreateStatic(menu_thread, "MENU", configMINIMAL_STACK_SIZE, NULL, 2, stack, &buffer);
 }
 
 void menu_thread(void *argument) {

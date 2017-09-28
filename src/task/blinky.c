@@ -6,12 +6,15 @@
 #include "os.h"
 #include "ll.h"
 
+static StaticTask_t buffer;
+static StackType_t stack[configMINIMAL_STACK_SIZE];
+
 int blinky_led_factor = 1;
 
 static void LED_Thread(void *argument);
 
 void blinky_create_task(LedBlinky *config) {
-  xTaskCreate(LED_Thread, "BLNK", configMINIMAL_STACK_SIZE - 1, config, 2, NULL);
+  xTaskCreateStatic(LED_Thread, "BLNK", configMINIMAL_STACK_SIZE - 1, config, 2, stack, &buffer);
 }
 
 static void LED_Thread(void *argument) {

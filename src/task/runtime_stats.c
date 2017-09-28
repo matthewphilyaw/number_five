@@ -8,13 +8,17 @@
 #include "display/gfx.h"
 #include "task/runtime_stats.h"
 
+#define STACK_SIZE 200
+
+static StaticTask_t buffer;
+static StackType_t stack[STACK_SIZE];
+
 static void WriteToScreen(void *argument);
 
-char buffer[100];
 TaskHandle_t run_time_stat_handle;
 
 void runtime_stats_create_task() {
-  xTaskCreate(WriteToScreen, "STAT", 200, NULL, 3, &run_time_stat_handle);
+  xTaskCreateStatic(WriteToScreen, "STAT", STACK_SIZE, NULL, 3, stack, &buffer);
 }
 
 /*

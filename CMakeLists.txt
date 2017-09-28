@@ -26,7 +26,8 @@ include_directories(
 
 # User source
 set(USER_SOURCE
-        src/main.c
+        src/main.cpp
+        src/syscalls.c
         src/bsp/board.c
         src/display/ssd1306.c
         src/display/gfx.c
@@ -64,7 +65,6 @@ add_library(CMSIS
 
 add_library(FREE_RTOS
         ${FREE_RTOS_DIR}/Source/portable/GCC/${RTOS_TARGET}/port.c
-        ${FREE_RTOS_DIR}/Source/portable/MemMang/heap_1.c
         ${FREE_RTOS_DIR}/Source/croutine.c
         ${FREE_RTOS_DIR}/Source/event_groups.c
         ${FREE_RTOS_DIR}/Source/list.c
