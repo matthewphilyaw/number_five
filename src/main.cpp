@@ -11,30 +11,20 @@ extern "C" {
 
 }
 
-static StaticTask_t idle_task_block;
-static StackType_t idle_task_stack[configMINIMAL_STACK_SIZE];
+#define IDLE_STACK_SIZE configMINIMAL_STACK_SIZE
 
-#define N5_USER_RUNTIME_STATS 0
+static StaticTask_t idle_task_block;
+static StackType_t idle_task_stack[IDLE_STACK_SIZE];
+
 #define SSD_ADDR 0x78
 
 LedBlinky t1 = {10, LL_GPIO_PIN_5};
 
-int main(void) {
+int main() {
   board_init();
-
-  // settle for a moment before writing to screen
-  LL_mDelay(20);
-
-  gfx_init();
-
-  //                   123456789ABCDEF12345
-  gfx_write_str("\n\n\n     Starting..\n");
-  gfx_display();
 
   blinky_create_task(&t1);
   menu_create_task();
-
-  gfx_clear();
 
   vTaskStartScheduler();
 
@@ -51,7 +41,7 @@ extern "C" {
                                      uint32_t *pulIdleTaskStackSize ) {
     *ppxIdleTaskTCBBuffer = &idle_task_block;
     *ppxIdleTaskStackBuffer = idle_task_stack;
-    *pulIdleTaskStackSize = configMINIMAL_STACK_SIZE;
+    *pulIdleTaskStackSize = IDLE_STACK_SIZE;
   }
 
   void vApplicationMallocFailedHook(void) {

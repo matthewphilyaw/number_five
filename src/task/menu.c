@@ -20,10 +20,17 @@ void menu_thread(void *argument) {
   // Set counter to the mid point
   LL_TIM_SetCounter(TIM21, UINT16_MAX >> 1);
 
+  uint32_t last_count = 0;
+
   uint32_t prevWakeUpTime = xTaskGetTickCount();
   for(;;) {
     uint32_t count = LL_TIM_GetCounter(TIM21);
     uint32_t dir   = LL_TIM_GetDirection(TIM21);
+
+    if (count == last_count) {
+      // Nothing changed lets go back into the delay
+      vTaskDelayUntil(&prevWakeUpTime, 100);
+    }
 
     gfx_clear();
     if (dir == LL_TIM_COUNTERDIRECTION_UP) {

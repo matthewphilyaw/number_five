@@ -27,13 +27,11 @@ include_directories(
 # User source
 set(USER_SOURCE
         src/main.cpp
-        src/syscalls.c
         src/bsp/board.c
         src/display/ssd1306.c
         src/display/gfx.c
         src/task/blinky.c
-        src/task/menu.c
-        src/task/runtime_stats.c)
+        src/task/menu.c)
 
 # Libraries
 set(HAL_DIR_PREFIX ${DRIVER_DIR}/${MCU_FAMILY}_HAL_Driver/Src/${MCU_FAMILY_LOWER}_ll_)
