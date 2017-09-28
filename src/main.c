@@ -3,13 +3,14 @@
 #include "display/ssd1306.h"
 #include "display/gfx.h"
 #include "task/blinky.h"
+#include "task/menu.h"
 #include "task/runtime_stats.h"
 #include "bsp/board.h"
 
 #define N5_USER_RUNTIME_STATS 0
 #define SSD_ADDR 0x78
 
-LedBlinky t1 = {500, LL_GPIO_PIN_5};
+LedBlinky t1 = {10, LL_GPIO_PIN_5};
 
 int main(void) {
   board_init();
@@ -24,6 +25,7 @@ int main(void) {
   gfx_display();
 
   blinky_create_task(&t1);
+  menu_create_task();
 
 #if (N5_USER_RUNTIME_STATS == 1)
   #if (configUSE_TRACE_FACILITY != 1 || configGENERATE_RUN_TIME_STATS != 1)

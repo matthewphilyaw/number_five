@@ -6,6 +6,8 @@
 #include "os.h"
 #include "ll.h"
 
+int blinky_led_factor = 1;
+
 static void LED_Thread(void *argument);
 
 void blinky_create_task(LedBlinky *config) {
@@ -18,6 +20,6 @@ static void LED_Thread(void *argument) {
   uint32_t prevWakeUpTime = xTaskGetTickCount();
   for(;;) {
     LL_GPIO_TogglePin(GPIOA, config->pin);
-    vTaskDelayUntil(&prevWakeUpTime, config->rate);
+    vTaskDelayUntil(&prevWakeUpTime, (config->rate + (blinky_led_factor * 10)));
   }
 }

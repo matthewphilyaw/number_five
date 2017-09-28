@@ -31,6 +31,7 @@ set(USER_SOURCE
         src/display/ssd1306.c
         src/display/gfx.c
         src/task/blinky.c
+        src/task/menu.c
         src/task/runtime_stats.c)
 
 # Libraries
