@@ -67,6 +67,19 @@ Reset_Handler:
   ldr   r0, =_estack
   mov   sp, r0          /* set stack pointer */
 
+  ldr   r2, =_sdata
+
+/* fill ram with all 0xff */
+FillDEADBEEF:
+  ldr  r3, =0xDEADBEEF
+  str  r3, [r2]
+  adds r2, r2, #4
+
+LoopFillDEADBEEF:
+  ldr  r3, = _estack
+  cmp  r2, r3
+  bcc  FillDEADBEEF
+
 /* Copy the data segment initializers from flash to SRAM */
   movs  r1, #0
   b  LoopCopyDataInit

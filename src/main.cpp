@@ -5,34 +5,55 @@ extern "C" {
 
 #include "display/ssd1306.h"
 #include "display/gfx.h"
-#include "task/blinky.h"
-#include "task/menu.h"
-#include "bsp/board.h"
 
 }
 
+#include "task/blinky_task.h"
+#include "task/menu_task.h"
+#include "driver/gpio/output_pin.h"
+#include "driver/gpio/alternate_pin.h"
+#include "driver/timer/encoder.h"
+#include "driver/i2c.h"
+
 #define IDLE_STACK_SIZE configMINIMAL_STACK_SIZE
-
 static StaticTask_t idle_task_block;
-static StackType_t idle_task_stack[IDLE_STACK_SIZE];
+static StackType_t  idle_task_stack[IDLE_STACK_SIZE];
 
-#define SSD_ADDR 0x78
-
-LedBlinky t1 = {10, LL_GPIO_PIN_5};
+constexpr uint32_t I2C_TIMING = 0x0004060E;
+constexpr uint32_t SSD_ADDR = 0x78;
 
 int main() {
-  board_init();
+  LL_UTILS_PLLInitTypeDef pll_init_struct = {LL_RCC_PLL_MUL_6, LL_RCC_PLL_DIV_3};
+  LL_UTILS_ClkInitTypeDef clk_init_struct = {LL_RCC_SYSCLK_DIV_1, LL_RCC_APB1_DIV_1, LL_RCC_APB2_DIV_1};
+  LL_PLL_ConfigSystemClock_HSI(&pll_init_struct, &clk_init_struct);
 
-  blinky_create_task(&t1);
-  menu_create_task();
+  // For LL_mDelay - let FreeRtos handle SysTick_Handler
+  LL_Init1msTick(SystemCoreClock);
+
+  // Green LED on board
+  static OutputPin led(GPIOA, LL_GPIO_PIN_5);
+
+  // Initializer I2C1
+  static AlternatePin i2c_1_scl(GPIOB, LL_GPIO_PIN_8, LL_GPIO_AF_4, LL_GPIO_SPEED_FREQ_VERY_HIGH, LL_GPIO_PULL_UP, LL_GPIO_OUTPUT_OPENDRAIN);
+  static AlternatePin i2c_1_sda(GPIOB, LL_GPIO_PIN_9, LL_GPIO_AF_4, LL_GPIO_SPEED_FREQ_VERY_HIGH, LL_GPIO_PULL_UP, LL_GPIO_OUTPUT_OPENDRAIN);
+  static I2C i2c(I2C1, LL_RCC_I2C1_CLKSOURCE_SYSCLK, I2C_TIMING, true);
+
+  // Initialize Encoder
+  static AlternatePin q_enc_ch1(GPIOB, LL_GPIO_PIN_13, LL_GPIO_AF_6);
+  static AlternatePin q_enc_ch2(GPIOB, LL_GPIO_PIN_14, LL_GPIO_AF_6);
+  static Encoder q_enc(TIM21);
+
+  gfx_init();
+
+  static BlinkyTask<configMINIMAL_STACK_SIZE> btask1("b1", 3, &led, 1000);
+  static MenuTask<configMINIMAL_STACK_SIZE> mtask1("m1", 1, &q_enc);
 
   vTaskStartScheduler();
 
   for (;;) {
-    // should never get here.
+    // never get here
   }
 }
-
 
 extern "C" {
 
